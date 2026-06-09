@@ -2,6 +2,8 @@
 
 const express = require('express');
 
+const cors = require('cors'); 
+
 // Importamos as rotas que acabamos de criar no arquivo routes.js
 const routes = require('./routes'); 
 
@@ -10,6 +12,9 @@ const app = express();
 
 // Configura o Express para entender requisições em formato JSON
 app.use(express.json());
+
+// Habilita o CORS para todas as rotas
+app.use(cors());
 
 // Dizemos ao nosso aplicativo para usar as rotas importadas
 // Isso conecta tudo o que fizemos no routes.js ao nosso servidor principal
